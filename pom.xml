@@ -10,7 +10,6 @@
 
     <properties>
         <docker.image.prefix>kammana</docker.image.prefix>
-        <!-- You can also specify the Java version here if you prefer -->
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
     </properties>
@@ -57,12 +56,19 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
-                    <!-- Set the source and target to Java 7 or higher -->
                     <source>1.7</source>
                     <target>1.7</target>
                 </configuration>
+            </plugin>
+
+            <!-- Update the maven-war-plugin version to a newer, compatible one -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.3.2</version>  <!-- Updated to a more recent version -->
             </plugin>
         </plugins>
     </build>
 
 </project>
+
